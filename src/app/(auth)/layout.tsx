@@ -10,7 +10,7 @@ export default function AuthLayout({
       <Navbar />
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [background-size:40px_40px]"></div>
       <div className="relative h-screen flex flex-col items-center justify-center px-4 pt-16">
-        <div className="w-full max-w-md">{children}</div>
+        <div className="w-full max-w-xl">{children}</div>
       </div>
     </main>
   );
