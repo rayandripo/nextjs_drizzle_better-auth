@@ -144,7 +144,7 @@ export default function Login() {
             >
               <rect width="24" height="24" rx="4" fill="currentColor" />
             </svg>
-            Acme Inc.
+            Next / Drizzle / Better-auth.
           </div>
         </div>
 
