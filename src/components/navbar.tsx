@@ -10,12 +10,14 @@ export default async function Navbar() {
     headers: await headers(),
   });
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-white/80 border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-[#0A0B14] border-b border-[#21243d]">
       <div className="container-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <AirVent className="h-6 w-6" />
-            <span className="font-bold">Next / Drizzle / Better-auth.</span>
+            <AirVent className="h-6 w-6 text-[#ffffff]" />
+            <span className="font-bold text-[#c2c2c2]">
+              Next / Drizzle / Better-auth.
+            </span>
           </Link>
 
           <div>

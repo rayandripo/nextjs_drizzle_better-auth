@@ -14,7 +14,7 @@ export default function ClientComponent() {
   }
 
   return (
-    <div className="bg-slate-100 m-4 p-4 rounded-lg shadow-lg">
+    <div className="bg-[#282d3b] border border-[#42466c] m-4 p-4 rounded-lg shadow-lg text-[#ffffff] max-w-2xl mx-auto">
       <h1>This is from client component</h1>
       <h1>Session id: {session.userId}</h1>
     </div>

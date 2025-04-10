@@ -1,9 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a0b14] text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#0a0b14] text-white">
       {/* Hero Section */}
       <main className="max-w-6xl mx-auto px-6 py-20 text-center">
         <div className="space-y-6">
@@ -12,7 +9,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-6xl font-bold leading-tight">
-            Next Auth is the new{" "}
+            Better Auth is the new{" "}
             <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-orange-500 text-transparent bg-clip-text">
               standard for authentication
             </span>
@@ -33,15 +30,6 @@ export default function Home() {
             <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium hover:opacity-90 transition-opacity">
               Join waitlist
             </button>
-          </div>
-        </div>
-
-        {/* Preview Section */}
-        <div className="mt-20">
-          <div className="relative rounded-xl overflow-hidden border border-white/10 bg-white/5">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent"></div>
-            {/* You can add a screenshot or preview image here */}
-            <div className="h-[400px] w-full bg-[#0f1117] rounded-lg m-4"></div>
           </div>
         </div>
       </main>

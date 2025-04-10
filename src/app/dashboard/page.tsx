@@ -15,10 +15,12 @@ export default async function DashboardPage() {
   const user = session?.user;
   return (
     <div className="mt-30 text-center">
-      <h1 className="text-2xl font-bold underline">Welcome to the dashboard</h1>
+      <h1 className="text-2xl font-bold underline text-[#ffffff]">
+        Welcome to the dashboard
+      </h1>
       <ul>
-        <li>Name: {user.name}</li>
-        <li>Email: {user.email}</li>
+        <li className="text-[#ffffff]">Name: {user.name}</li>
+        <li className="text-[#ffffff]">Email: {user.email}</li>
       </ul>
       <ClientComponent />
     </div>

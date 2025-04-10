@@ -131,16 +131,16 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8">
-      <div className="w-full max-w-xl space-y-8 bg-white p-8 rounded-lg shadow-md">
+      <div className="w-full max-w-xl space-y-8 bg-[#0f1117] p-8 rounded-lg shadow-md border border-white/10">
         <div className="flex flex-col items-center">
-          <div className="flex items-center gap-2 text-xl font-semibold">
+          <div className="flex items-center gap-2 text-xl font-semibold text-white">
             <svg
               width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="text-black"
+              className="text-white"
             >
               <rect width="24" height="24" rx="4" fill="currentColor" />
             </svg>
@@ -149,17 +149,17 @@ export default function Login() {
         </div>
 
         <div className="text-center space-y-2">
-          <h2 className="text-2xl font-semibold">Welcome back</h2>
-          <p className="text-sm text-gray-600">
+          <h2 className="text-2xl font-semibold text-white">Welcome back</h2>
+          <p className="text-sm text-gray-400">
             Login with your GitHub or Google account
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           <button
             onClick={handleGithubSignIn}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-gray-300 rounded bg-white hover:bg-gray-50 transition-colors cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-white/10 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-pointer text-white"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path
@@ -173,7 +173,7 @@ export default function Login() {
           <button
             onClick={handleGoogleSignIn}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-gray-300 rounded bg-white hover:bg-gray-50 transition-colors cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-white/10 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-pointer text-white"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path
@@ -199,16 +199,16 @@ export default function Login() {
 
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-300"></div>
+            <div className="w-full border-t border-white/10"></div>
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-white text-gray-500">
+            <span className="px-2 bg-[#0f1117] text-gray-400">
               Or continue with
             </span>
           </div>
         </div>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="sr-only">
@@ -220,7 +220,7 @@ export default function Login() {
                 type="email"
                 autoComplete="email"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition-colors"
+                className="w-full px-4 py-2 border border-white/10 rounded bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
                 placeholder="m@example.com"
               />
             </div>
@@ -232,7 +232,7 @@ export default function Login() {
                 </label>
                 <Link
                   href="/forgot-password"
-                  className="text-sm text-blue-500 hover:text-blue-600 transition-colors"
+                  className="text-sm text-purple-400 hover:text-purple-300 transition-colors"
                 >
                   Forgot your password?
                 </Link>
@@ -243,30 +243,30 @@ export default function Login() {
                 type="password"
                 autoComplete="current-password"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition-colors"
+                className="w-full px-4 py-2 border border-white/10 rounded bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
                 placeholder="Password"
               />
             </div>
           </div>
 
           {error && (
-            <div className="text-red-500 text-sm text-center">{error}</div>
+            <div className="text-red-400 text-sm text-center">{error}</div>
           )}
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors disabled:opacity-50"
+            className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded hover:opacity-90 transition-opacity disabled:opacity-50"
           >
             {loading ? "Signing in..." : "Login"}
           </button>
         </form>
 
         <div className="text-center text-sm">
-          <span className="text-gray-600">Don't have an account? </span>
+          <span className="text-gray-400">Don't have an account? </span>
           <Link
             href="/sign-up"
-            className="text-blue-500 hover:text-blue-600 transition-colors"
+            className="text-purple-400 hover:text-purple-300 transition-colors"
           >
             Sign up
           </Link>
@@ -274,11 +274,14 @@ export default function Login() {
 
         <div className="text-center text-xs text-gray-500">
           By clicking continue, you agree to our{" "}
-          <Link href="/terms" className="underline">
+          <Link href="/terms" className="text-purple-400 hover:text-purple-300">
             Terms of Service
           </Link>{" "}
           and{" "}
-          <Link href="/privacy" className="underline">
+          <Link
+            href="/privacy"
+            className="text-purple-400 hover:text-purple-300"
+          >
             Privacy Policy
           </Link>
           .
