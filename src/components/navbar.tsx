@@ -31,7 +31,12 @@ export default async function Navbar() {
                   redirect("/");
                 }}
               >
-                <Button type="submit">Sign Out</Button>
+                <Button
+                  className="bg-neutral-700 text-white p-2 rounded-md hover:bg-neutral-600 cursor-pointer"
+                  type="submit"
+                >
+                  Sign Out
+                </Button>
               </form>
             ) : (
               <Link href="/sign-in" className={buttonVariants()}>
