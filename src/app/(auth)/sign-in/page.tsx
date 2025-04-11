@@ -8,6 +8,9 @@ import { useRouter } from "next/navigation";
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showMagicLink, setShowMagicLink] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,12 +18,12 @@ export default function Login() {
     setLoading(true);
     setError("");
 
-    const formData = new FormData(e.currentTarget);
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-
     try {
-      await handleEmailSignIn(email, password);
+      if (showMagicLink) {
+        await handleMagicLinkSignIn(email);
+      } else {
+        await handleEmailSignIn(email, password);
+      }
     } catch {
       setError("An unexpected error occurred");
     } finally {
@@ -45,6 +48,28 @@ export default function Login() {
 
     if (error) {
       setError(error.message || "Sign in failed");
+    }
+  };
+
+  const handleMagicLinkSignIn = async (email: string) => {
+    const { error } = await authClient.signIn.magicLink(
+      {
+        email,
+        callbackURL: "/dashboard",
+      },
+      {
+        onRequest: () => setLoading(true),
+        onSuccess: () => {
+          // Show success message to user
+          setError("Check your email for the magic link!");
+        },
+        onError: (ctx) =>
+          setError(ctx.error.message || "Magic link sign in failed"),
+      }
+    );
+
+    if (error) {
+      setError(error.message || "Magic link sign in failed");
     }
   };
 
@@ -208,11 +233,14 @@ export default function Login() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="sr-only">
-                Email
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-400"
+              >
+                Email address
               </label>
               <input
                 id="email"
@@ -220,46 +248,63 @@ export default function Login() {
                 type="email"
                 autoComplete="email"
                 required
-                className="w-full px-4 py-2 border border-white/10 rounded bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                placeholder="m@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="mt-1 block w-full px-3 py-2 bg-white/5 border border-white/10 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                placeholder="Enter your email"
               />
             </div>
 
-            <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="sr-only">
+            {!showMagicLink && (
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-400"
+                >
                   Password
                 </label>
-                <Link
-                  href="/forgot-password"
-                  className="text-sm text-purple-400 hover:text-purple-300 transition-colors"
-                >
-                  Forgot your password?
-                </Link>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="mt-1 block w-full px-3 py-2 bg-white/5 border border-white/10 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  placeholder="Enter your password"
+                />
               </div>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="w-full px-4 py-2 border border-white/10 rounded bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                placeholder="Password"
-              />
-            </div>
+            )}
           </div>
 
-          {error && (
-            <div className="text-red-400 text-sm text-center">{error}</div>
-          )}
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={() => setShowMagicLink(!showMagicLink)}
+              className="text-sm text-purple-400 hover:text-purple-300"
+            >
+              {showMagicLink
+                ? "Use password instead"
+                : "Use magic link instead"}
+            </button>
+          </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded hover:opacity-90 transition-opacity disabled:opacity-50"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50"
           >
-            {loading ? "Signing in..." : "Login"}
+            {loading
+              ? "Loading..."
+              : showMagicLink
+              ? "Send Magic Link"
+              : "Sign In"}
           </button>
+
+          {error && (
+            <div className="text-red-500 text-sm text-center">{error}</div>
+          )}
         </form>
 
         <div className="text-center text-sm">

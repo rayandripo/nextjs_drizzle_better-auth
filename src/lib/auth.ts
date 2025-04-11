@@ -3,6 +3,8 @@ import { schema } from "@/db/schema";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
+import { magicLink } from "better-auth/plugins";
+import { sendMagicLinkEmail } from "./email";
 
 export const auth = betterAuth({
     emailAndPassword: {
@@ -23,5 +25,17 @@ export const auth = betterAuth({
         provider: "pg",
         schema: schema
     }),
-    plugins: [nextCookies()]
+    plugins: [
+        nextCookies(),
+        magicLink({
+            sendMagicLink: async ({ email, url }) => {
+                try {
+                    await sendMagicLinkEmail({ email, url });
+                } catch (error) {
+                    console.error('Failed to send magic link email:', error);
+                    throw new Error('Failed to send magic link email');
+                }
+            }
+        })
+    ]
 });
