@@ -47,6 +47,7 @@
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-typescript": "^7.27.0",
+    "@better-auth/cli": "^1.2.5",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
