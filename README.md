@@ -2,16 +2,27 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, run the install:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+```
+
+## Adding the env credentials
+
+```bash
+DATABASE_URL= #Your Neon DB URL
+
+BETTER_AUTH_SECRET= #Your Better Auth Secret
+BETTER_AUTH_URL=http://localhost:3000 #Your Base URL of your app
+
+GOOGLE_CLIENT_ID= #Your Google Client ID
+GOOGLE_CLIENT_SECRET= #Your Google Client Secret
+
+GITHUB_CLIENT_ID= #Your Github Client ID
+GITHUB_CLIENT_SECRET= #Your Github Client Secret
+
+RESEND_API_KEY= #Your Resend API Key
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
