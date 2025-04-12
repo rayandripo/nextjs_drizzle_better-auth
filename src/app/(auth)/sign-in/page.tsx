@@ -4,6 +4,7 @@ import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { AirVent } from "lucide-react";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -129,25 +130,18 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8">
-      <div className="w-full max-w-xl space-y-8 bg-[#0f1117] p-8 rounded-lg shadow-md border border-white/10">
+      <div className="w-full max-w-xl space-y-8 p-8 rounded-lg shadow-md border border-white/10 bg-[#202C41]">
         <div className="flex flex-col items-center">
-          <div className="flex items-center gap-2 text-xl font-semibold text-white">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-white"
-            >
-              <rect width="24" height="24" rx="4" fill="currentColor" />
-            </svg>
+          <div className="flex items-center gap-2 text-xl font-semibold text-[#a3adc2]">
+            <AirVent className="h-6 w-6 text-[#ffffff]" />
             Next / Drizzle / Better-auth.
           </div>
         </div>
 
         <div className="text-center space-y-2">
-          <h2 className="text-2xl font-semibold text-white">Welcome back</h2>
+          <h2 className="text-2xl font-semibold text-[#a3adc2]">
+            Welcome back
+          </h2>
           <p className="text-sm text-gray-400">
             Login with your GitHub or Google account
           </p>
@@ -157,7 +151,7 @@ export default function Login() {
           <button
             onClick={handleGithubSignIn}
             disabled={loading}
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-white/10 rounded-md bg-white/5 hover:bg-white/10 transition-colors disabled:opacity-50"
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-white/10 rounded-md bg-white/5 hover:bg-white/10 transition-colors disabled:opacity-50 cursor-pointer"
           >
             <svg
               className="w-5 h-5"
@@ -177,7 +171,7 @@ export default function Login() {
           <button
             onClick={handleGoogleSignIn}
             disabled={loading}
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-white/10 rounded-md bg-white/5 hover:bg-white/10 transition-colors disabled:opacity-50"
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-white/10 rounded-md bg-white/5 hover:bg-white/10 transition-colors disabled:opacity-50 cursor-pointer"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -194,7 +188,7 @@ export default function Login() {
             <div className="w-full border-t border-white/10"></div>
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-[#0f1117] text-gray-400">
+            <span className="px-4 p-1 bg-[#192132] text-gray-400">
               Or continue with
             </span>
           </div>
@@ -249,7 +243,7 @@ export default function Login() {
             <button
               type="button"
               onClick={() => setShowMagicLink(!showMagicLink)}
-              className="text-sm text-purple-400 hover:text-purple-300"
+              className="w-full text-sm text-purple-400 hover:text-purple-300 bg-[#26334D] hover:bg-[#192132] py-2 px-4 rounded-md cursor-pointer"
             >
               {showMagicLink
                 ? "Use password instead"
@@ -260,7 +254,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 cursor-pointer"
           >
             {loading
               ? "Loading..."

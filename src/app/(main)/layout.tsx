@@ -8,12 +8,10 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`antialiased`}>
-        <Navbar />
-        {children}
-        <Toaster />
-      </body>
-    </html>
+    <>
+      <Navbar />
+      {children}
+      <Toaster />
+    </>
   );
 }

@@ -6,7 +6,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="min-h-screen bg-[#0a0b14] text-white">
+    <main className="min-h-screen text-white">
       <Navbar />
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [background-size:40px_40px] opacity-10"></div>
       <div className="relative h-screen flex flex-col items-center justify-center px-4 pt-16">

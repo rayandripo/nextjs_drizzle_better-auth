@@ -1,88 +1,33 @@
-import { AppSidebar } from "@/components/app-sidebar";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
-import Link from "next/link";
-import { Button, buttonVariants } from "@/components/ui/button";
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import React from "react";
 
-export default async function Page() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
+function DashboardPage() {
+  const breadcrumbItems = [{ label: "Dashboard", href: "/dashboard" }];
+
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <SidebarInset>
-        <header className="flex justify-between pr-6 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-          <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
-            <Separator
-              orientation="vertical"
-              className="mr-2 data-[orientation=vertical]:h-4"
-            />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
+    <div className="max-w-7xl mx-auto px-6 md:px-0 pb-8 ">
+      <div className="mb-8">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
 
-          <div>
-            {session ? (
-              <form
-                action={async () => {
-                  "use server";
-                  await auth.api.signOut({
-                    headers: await headers(),
-                  });
-                  redirect("/");
-                }}
-              >
-                <Button
-                  className="bg-neutral-700 text-white p-2 rounded-md hover:bg-neutral-600 cursor-pointer"
-                  type="submit"
-                >
-                  Sign Out
-                </Button>
-              </form>
-            ) : (
-              <Link href="/sign-in" className={buttonVariants()}>
-                Sign In
-              </Link>
-            )}
-          </div>
-        </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="bg-[#101222] aspect-video rounded-xl" />
-            <div className="bg-[#101222] aspect-video rounded-xl" />
-            <div className="bg-[#101222] aspect-video rounded-xl" />
-          </div>
-          <div className="bg-[#101222] min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
-        </div>
-      </SidebarInset>
-    </SidebarProvider>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Card className="bg-[#26334D]">
+          <CardHeader>
+            <CardTitle className="text-[#a3adc2]">Total Sales</CardTitle>
+            <CardDescription className="text-[#a3adc2]">
+              Total sales for the month of April 2025
+            </CardDescription>
+          </CardHeader>
+        </Card>
+      </div>
+    </div>
   );
 }
+
+export default DashboardPage;

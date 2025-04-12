@@ -1,6 +1,18 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#0a0b14] text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center text-white relative overflow-hidden">
+      {/* Gradient Orb */}
+      <Image
+        src="/images/gradient-orb.png"
+        alt="Gradient orb"
+        width={800}
+        height={800}
+        className="absolute top-0 left-0 w-[800px] h-[800px] object-cover opacity-60"
+        priority
+      />
+
       {/* Hero Section */}
       <main className="max-w-6xl mx-auto px-6 py-20 text-center">
         <div className="space-y-6">

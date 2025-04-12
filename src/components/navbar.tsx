@@ -10,7 +10,7 @@ export default async function Navbar() {
     headers: await headers(),
   });
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-[#0A0B14] border-b border-[#21243d]">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-[#202B40] border-b border-[#26334D]">
       <div className="container-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
@@ -32,7 +32,7 @@ export default async function Navbar() {
                 }}
               >
                 <Button
-                  className="bg-neutral-700 text-white p-2 rounded-md hover:bg-neutral-600 cursor-pointer"
+                  className="bg-[#161f30] text-[#a3adc2] py-1 px-4 text-xs rounded-md hover:bg-[#26334D] cursor-pointer"
                   type="submit"
                 >
                   Sign Out
