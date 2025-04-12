@@ -5,7 +5,7 @@ export const navigationData: NavigationSection[] = [
     title: 'Main',
     items: [
       { label: 'Dashboard', icon: 'layoutDashboard', href: '/dashboard' },
-      { label: 'Products', icon: 'shoppingBag', href: '/dashboard/products' },
+      { label: 'Profile', icon: 'user', href: '/dashboard/profile' },
     ],
   },
   {
@@ -35,19 +35,5 @@ export const navigationData: NavigationSection[] = [
       { label: 'Forms', icon: 'formInput', href: '/forms' },
       { label: 'UI Elements', icon: 'palette', href: '/ui-elements' },
     ],
-  },
-  {
-    title: 'Maps & Icons',
-    items: [
-      { label: 'Google Maps', icon: 'map', href: '/maps' },
-      { label: 'Icon Library', icon: 'library', href: '/icons' },
-    ],
-  },
-  {
-    title: 'Tables & Charts',
-    items: [
-      { label: 'Data Tables', icon: 'table', href: '/tables' },
-      { label: 'Statistics', icon: 'pieChart', href: '/charts' },
-    ],
-  },
+  }
 ];
