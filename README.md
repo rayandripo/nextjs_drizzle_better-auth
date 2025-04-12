@@ -37,4 +37,16 @@ It will generate a auth-schema.ts that we need to copy to the drizzle schema
     npx @better-auth/cli generate
 ```
 
-Than we need to copy the content of the auth-schema to the drizzle schema in the db folder
+We need to copy the content of the auth-schema to the drizzle schema in the db folder.
+
+## Pussing the schema to the Neon db
+
+```bash
+    npx db:generate
+```
+
+after that we need to push it to our Neon db
+
+```bash
+    npx db:push
+```
