@@ -41,6 +41,8 @@ We need to copy the content of the auth-schema to the drizzle schema in the db f
 
 ## Pussing the schema to the Neon db
 
+first we need to generate the schema
+
 ```bash
     npx db:generate
 ```
@@ -49,4 +51,12 @@ after that we need to push it to our Neon db
 
 ```bash
     npx db:push
+```
+
+## Starting the application
+
+Now if we have done everything correct we can visit it on localhost:3000
+
+```bash
+pnpm run dev
 ```
