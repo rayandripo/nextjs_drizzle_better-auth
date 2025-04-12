@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
-  background-color: #192132;
+  background-color: #242424;
 }
 
 @theme inline {
@@ -52,7 +52,7 @@ body {
   --background: #192132;
   --foreground: oklch(15.34% 0.019 278.97);
   --card: #26334D;
-  --card-foreground: #1C203C;
+  --card-foreground: #a3adc2;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
@@ -67,11 +67,11 @@ body {
   --border: #282D54;
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: #a3adc2;
-  --chart-2: #a3adc2;
-  --chart-3: #a3adc2;
-  --chart-4: #a3adc2;
-  --chart-5: #a3adc2;
+  --chart-1: #26334D;
+  --chart-2: #26334D;
+  --chart-3: #26334D;
+  --chart-4: #26334D;
+  --chart-5: #26334D;
   --sidebar: #202B404;
   --sidebar-foreground: #a3adc2;
   --sidebar-primary: #222f46;

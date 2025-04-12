@@ -12,14 +12,14 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
         {items.map((item, index) => (
           <li key={item.href} className="flex items-center">
             {index > 0 && (
-              <ChevronRight className="w-4 h-4 text-[#a3adc2] mx-2" />
+              <ChevronRight className="w-4 h-4 text-[#A0A0A0] mx-2" />
             )}
             <a
               href={item.href}
               className={`text-sm ${
                 index === items.length - 1
-                  ? "text-[#a3adc2] font-medium"
-                  : "text-[#a3adc2] hover:text-[#a3adc2]"
+                  ? "text-[#A0A0A0] font-medium"
+                  : "text-[#A0A0A0] hover:text-[#A0A0A0]"
               }`}
             >
               {item.label}

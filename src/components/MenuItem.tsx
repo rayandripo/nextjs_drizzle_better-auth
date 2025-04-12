@@ -47,8 +47,8 @@ const MenuItem = ({ item, isCollapsed }: MenuItemProps) => {
           href={item.href}
           className={`w-full flex items-center px-4 py-2 rounded-lg transition-colors ${
             isActive
-              ? "text-[#a3adc2] border border-[#e2e8ff1a] bg-[#2F3A52]"
-              : "text-[#a3adc2] hover:bg-[#2F3A52]"
+              ? "text-[#7A7A7A] border border-[#424242] bg-[#242424]"
+              : "text-[#7A7A7A] hover:bg-[#242424] border border-transparent hover:border hover:border-[#424242]"
           }`}
         >
           {content}
@@ -58,8 +58,8 @@ const MenuItem = ({ item, isCollapsed }: MenuItemProps) => {
           onClick={() => hasSubmenu && setIsOpen(!isOpen)}
           className={`w-full flex items-center px-4 py-2 rounded-lg transition-colors ${
             isActive
-              ? "bg-[#2F3A52] text-[#a3adc2]"
-              : "text-[#a3adc2] hover:bg-[#2F3A52]"
+              ? "bg-[#242424] text-[#7A7A7A]"
+              : "text-[#7A7A7A] hover:bg-[#242424] border border-transparent hover:border hover:border-[#424242]"
           }`}
         >
           {content}

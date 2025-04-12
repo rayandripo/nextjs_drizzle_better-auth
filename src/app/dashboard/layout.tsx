@@ -1,63 +1,30 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Sidebar } from "@/components/Sidebar";
-import { TopBar } from "@/components/TopBar";
-import { MobileSidebar } from "@/components/MobileSidebar";
+import { DashboardLayoutClient } from "@/components/DashboardLayoutClient";
+import { auth } from "@/lib/auth";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  try {
+    const headersList = await headers();
+    const session = await auth.api.getSession({
+      headers: headersList,
+    });
 
-  const handleToggleSidebar = () => {
-    if (window.innerWidth >= 1024) {
-      // Desktop behavior: toggle sidebar collapse
-      setIsSidebarCollapsed(!isSidebarCollapsed);
-    } else {
-      // Mobile behavior: toggle mobile sidebar sheet
-      setIsMobileSidebarOpen(!isMobileSidebarOpen);
+    if (!session) {
+      redirect("/sign-in");
     }
-  };
-
-  useEffect(() => {
-    // Close the mobile sidebar if the window is resized to desktop size
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsMobileSidebarOpen(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  } catch (error) {
+    console.error("Auth error:", error);
+    redirect("/sign-in");
+  }
 
   return (
-    <div className="h-screen  dark:bg-[#050520]">
-      {/* Mobile Sidebar */}
-      <MobileSidebar
-        isOpen={isMobileSidebarOpen}
-        onClose={() => setIsMobileSidebarOpen(false)}
-      />
-
-      {/* Desktop Sidebar */}
-      <div className="hidden lg:block">
-        <Sidebar isCollapsed={isSidebarCollapsed} />
-      </div>
-
-      {/* Main Content Area */}
-      <div
-        className={`flex-1 flex flex-col transition-all duration-300 ${
-          isSidebarCollapsed ? "lg:ml-16" : "lg:ml-64"
-        }`}
-      >
-        <TopBar onToggleSidebar={handleToggleSidebar} />
-        <main className="flex-1 overflow-x-hidden overflow-y-auto">
-          <div className="max-w-7xl mx-auto px-6 py-8">{children}</div>
-        </main>
-      </div>
+    <div className="flex min-h-screen bg-[#1a1a1a] dark:bg-[#030314]">
+      <DashboardLayoutClient>{children}</DashboardLayoutClient>
     </div>
   );
 }
