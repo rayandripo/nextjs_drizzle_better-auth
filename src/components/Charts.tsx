@@ -44,7 +44,7 @@ export function Charts() {
           <CardHeader className="space-y-0 pb-2">
             <CardDescription>Today</CardDescription>
             <CardTitle className="text-4xl tabular-nums">
-              12,584{" "}
+              12,584
               <span className="font-sans text-sm font-normal tracking-normal text-muted-foreground">
                 steps
               </span>

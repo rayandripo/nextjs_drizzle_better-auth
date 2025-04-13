@@ -7,7 +7,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -17,16 +16,14 @@ interface MobileSidebarProps {
 export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
   return (
     <div className="lg:hidden">
-      <Sheet>
+      <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetTrigger asChild>
-          <button className="fixed top-3 left-4 z-50 p-2   text-gray-500 rounded-md">
+          <button className="fixed top-3 left-4 z-50 p-2 text-gray-500 rounded-md">
             ☰
           </button>
         </SheetTrigger>
         <SheetContent side="left" className="p-0 w-64">
-          <VisuallyHidden.Root>
-            <SheetTitle>Menu</SheetTitle>
-          </VisuallyHidden.Root>
+          <SheetTitle className="sr-only">Menu</SheetTitle>
           <SheetHeader>
             <h2 className="text-lg font-bold px-4 py-2">Menu</h2>
           </SheetHeader>
