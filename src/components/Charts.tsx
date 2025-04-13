@@ -108,8 +108,8 @@ export function Charts() {
                   tickLine={false}
                   axisLine={false}
                   tickMargin={4}
-                  tickFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
+                  tickFormatter={(date) => {
+                    return new Date(date).toLocaleDateString("en-US", {
                       weekday: "short",
                     });
                   }}
